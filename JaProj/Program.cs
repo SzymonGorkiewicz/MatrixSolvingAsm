@@ -11,7 +11,6 @@ namespace JaProj
     internal class Program
     {
 
-        //[DllImport(@"C:\Users\sgork\source\repos\RepozytoriumPK4\lab1\JaProj\x64\Debug\JAAsm.dll")]
         [STAThread]
         static void Main()
         {
@@ -19,5 +18,10 @@ namespace JaProj
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());         
         }
+    }
+    public static class Gauss_Solver
+    {
+        [DllImport(@"C:\Users\sgork\Desktop\JaProj\x64\Debug\JAAsm.dll", CallingConvention = CallingConvention.Cdecl)]
+        public static extern void gauss_solver(double[,] matrix, int size);
     }
 }

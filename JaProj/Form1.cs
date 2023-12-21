@@ -85,13 +85,15 @@ namespace JaProj
                 // Wywołaj funkcję rozwiązującą układy równań
                 Stopwatch stopwatch = new Stopwatch();
                 stopwatch.Start();
-                
-                solutionsList=gauss.SolveSystems(matrices);
+                for (int i = 0; i < 5; i++)
+                {
+                    solutionsList = gauss.SolveSystems(matrices);
+                }
                 stopwatch.Stop();
-                //Console.WriteLine($"Czas wykonania: {stopwatch.ElapsedMilliseconds} ms");
+                Console.WriteLine($"Czas wykonania: {(stopwatch.ElapsedMilliseconds)/5} ms");
 
                 // Ścieżka do pliku wynikowego
-                string outputPath = "../../output_data/wyniki.txt";
+                string outputPath = "C://Users//sgork//Desktop//JaProj//JaProj//output_data//wyniki.txt";
 
                 // Utwórz lub nadpisz plik wynikowy
                 using (StreamWriter writer = new StreamWriter(outputPath))

@@ -77,8 +77,6 @@ namespace JaProj
             List<double[]> solutionsList = new List<double[]>();
             var options = new ParallelOptions { MaxDegreeOfParallelism = threads };
             // Iteruj po macierzach równolegle
-            Stopwatch stopwatch = new Stopwatch();
-            stopwatch.Start();
             Parallel.ForEach(matrices, options, matrix =>
             {
                 int n = matrix.GetLength(0);
@@ -149,8 +147,7 @@ namespace JaProj
 
                 solutionsList.Add(solutions);
             });
-            stopwatch.Stop();
-            Console.WriteLine($"Czas wykonania dla {threads} watków : {stopwatch.ElapsedMilliseconds} ms");
+  
             return solutionsList;
         }    
     }

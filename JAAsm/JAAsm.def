@@ -1,3 +1,3 @@
 LIBRARY JAAsm
 
-EXPORTS MyProc1
+EXPORTS gauss_solver

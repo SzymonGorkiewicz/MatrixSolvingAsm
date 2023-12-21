@@ -1,3 +1,16 @@
-﻿  LINK : nie znaleziono elementu C:\Users\sgork\source\repos\RepozytoriumPK4\lab1\JaProj\x64\Debug\JAAsm.dll ani nie został on skompilowany podczas ostatniego konsolidowania przyrostowego; zostanie wykonana pełna konsolidacja
-JAAsm.def : error LNK2001: nierozpoznany symbol zewnętrzny MyProc1
-C:\Users\sgork\source\repos\RepozytoriumPK4\lab1\JaProj\x64\Debug\JAAsm.lib : fatal error LNK1120: liczba nierozpoznanych elementów zewnętrznych: 1
+﻿  Assembling JAAsm.asm...
+JAAsm.asm(1): error A2008: syntax error : section
+JAAsm.asm(2): error A2008: syntax error : global
+JAAsm.asm(4): error A2034: must be in segment block
+JAAsm.asm(8): error A2034: must be in segment block
+JAAsm.asm(11): error A2034: must be in segment block
+JAAsm.asm(14): error A2034: must be in segment block
+JAAsm.asm(15): error A2034: must be in segment block
+JAAsm.asm(16): error A2034: must be in segment block
+JAAsm.asm(19): error A2034: must be in segment block
+JAAsm.asm(21): error A2034: must be in segment block
+JAAsm.asm(24): error A2034: must be in segment block
+JAAsm.asm(25): error A2034: must be in segment block
+JAAsm.asm(26): error A2034: must be in segment block
+JAAsm.asm(28): error A2034: must be in segment block
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\BuildCustomizations\masm.targets(70,5): error MSB3721: Polecenie ml64.exe /c /nologo /Zi /Fo"x64\Debug\JAAsm.obj" /W3 /errorReport:prompt  /TaJAAsm.asm zostało zakończone; kod błędu: 1.
