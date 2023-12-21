@@ -1,0 +1,10 @@
+C:\Users\sgork\source\repos\RepozytoriumPK4\lab1\JaProj\JaProj\bin\Debug\JaProj.exe.config
+C:\Users\sgork\source\repos\RepozytoriumPK4\lab1\JaProj\JaProj\bin\Debug\JaProj.exe
+C:\Users\sgork\source\repos\RepozytoriumPK4\lab1\JaProj\JaProj\bin\Debug\JaProj.pdb
+C:\Users\sgork\source\repos\RepozytoriumPK4\lab1\JaProj\JaProj\obj\Debug\JaProj.csproj.AssemblyReference.cache
+C:\Users\sgork\source\repos\RepozytoriumPK4\lab1\JaProj\JaProj\obj\Debug\JaProj.csproj.SuggestedBindingRedirects.cache
+C:\Users\sgork\source\repos\RepozytoriumPK4\lab1\JaProj\JaProj\obj\Debug\JaProj.Form1.resources
+C:\Users\sgork\source\repos\RepozytoriumPK4\lab1\JaProj\JaProj\obj\Debug\JaProj.csproj.GenerateResource.cache
+C:\Users\sgork\source\repos\RepozytoriumPK4\lab1\JaProj\JaProj\obj\Debug\JaProj.csproj.CoreCompileInputs.cache
+C:\Users\sgork\source\repos\RepozytoriumPK4\lab1\JaProj\JaProj\obj\Debug\JaProj.exe
+C:\Users\sgork\source\repos\RepozytoriumPK4\lab1\JaProj\JaProj\obj\Debug\JaProj.pdb

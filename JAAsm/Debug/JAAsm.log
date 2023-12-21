@@ -1,0 +1,2 @@
+﻿LINK : error LNK2001: nierozpoznany symbol zewnętrzny __DllMainCRTStartup@12
+C:\Users\sgork\source\repos\RepozytoriumPK4\lab1\JaProj\Debug\JAAsm.dll : fatal error LNK1120: liczba nierozpoznanych elementów zewnętrznych: 1
