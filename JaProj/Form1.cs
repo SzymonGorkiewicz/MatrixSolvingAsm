@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,13 +16,19 @@ namespace JaProj
 {
     public partial class Form1 : Form
     {
+
+        [DllImport(@"C:\Users\sgork\Desktop\JaProj\x64\Debug\JAAsm.dll", CallingConvention = CallingConvention.Cdecl)]
+       
+        public static extern int MyProc1(int a, int b, int c);
+
         private GaussElimination gauss= new GaussElimination();
+        GaussAlgorithm.Class1 GaussAlg = new GaussAlgorithm.Class1();
         public List<double[,]> matrices;
         private List<double[]> solutionsList;
         public Form1()
         {
             InitializeComponent();
-            label3.Text = "Wybrana ilosc watkow: " + gauss.threads;
+            label3.Text = "Wybrana ilosc watkow: " + GaussAlg.threads;
             
 
         }
@@ -87,10 +94,12 @@ namespace JaProj
                 stopwatch.Start();
                 for (int i = 0; i < 5; i++)
                 {
-                    solutionsList = gauss.SolveSystems(matrices);
+                    solutionsList = GaussAlg.SolveSystems(matrices);
                 }
                 stopwatch.Stop();
-                Console.WriteLine($"Czas wykonania: {(stopwatch.ElapsedMilliseconds)/5} ms");
+                long elapsedTicks = stopwatch.ElapsedTicks;
+                double nanoseconds = (double)elapsedTicks / Stopwatch.Frequency * 1e6;
+                Console.WriteLine($"Czas wykonania: {(nanoseconds)/5} mikroseconds");
 
                 // Ścieżka do pliku wynikowego
                 string outputPath = "C://Users//sgork//Desktop//JaProj//JaProj//output_data//wyniki.txt";
@@ -111,7 +120,7 @@ namespace JaProj
                         }
                         else
                         {
-                            Console.WriteLine($"Brak rozwiązań dla macierzy {i + 1}.");
+                            //Console.WriteLine($"Brak rozwiązań dla macierzy {i + 1}.");
                         }
                         writer.WriteLine(); // Dodaj pustą linię między rozwiązaniami macierzy
                     }
@@ -128,14 +137,14 @@ namespace JaProj
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            gauss.threads = 1;
-            label3.Text = "Wybrana ilosc watkow: " + gauss.threads;
+            GaussAlg.threads = 1;
+            label3.Text = "Wybrana ilosc watkow: " + GaussAlg.threads;
         }
 
         private void radioButton8_CheckedChanged(object sender, EventArgs e)
         {
-            gauss.threads = Environment.ProcessorCount;
-            label3.Text = "Wybrana ilosc watkow: " + gauss.threads;
+            GaussAlg.threads = Environment.ProcessorCount;
+            label3.Text = "Wybrana ilosc watkow: " + GaussAlg.threads;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -145,38 +154,44 @@ namespace JaProj
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-            gauss.threads = 2;
-            label3.Text = "Wybrana ilosc watkow: " + gauss.threads;
+            GaussAlg.threads = 2;
+            label3.Text = "Wybrana ilosc watkow: " + GaussAlg.threads;
         }
 
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
-            gauss.threads = 4;
-            label3.Text = "Wybrana ilosc watkow: " + gauss.threads;
+            GaussAlg.threads = 4;
+            label3.Text = "Wybrana ilosc watkow: " + GaussAlg.threads;
         }
 
         private void radioButton4_CheckedChanged(object sender, EventArgs e)
         {
-            gauss.threads = 8;
-            label3.Text = "Wybrana ilosc watkow: " + gauss.threads;
+            GaussAlg.threads = 8;
+            label3.Text = "Wybrana ilosc watkow: " + GaussAlg.threads;
         }
 
         private void radioButton5_CheckedChanged(object sender, EventArgs e)
         {
-            gauss.threads = 16;
-            label3.Text = "Wybrana ilosc watkow: " + gauss.threads;
+            GaussAlg.threads = 16;
+            label3.Text = "Wybrana ilosc watkow: " + GaussAlg.threads;
         }
 
         private void radioButton6_CheckedChanged(object sender, EventArgs e)
         {
-            gauss.threads = 32;
-            label3.Text = "Wybrana ilosc watkow: " + gauss.threads;
+            GaussAlg.threads = 32;
+            label3.Text = "Wybrana ilosc watkow: " + GaussAlg.threads;
         }
 
         private void radioButton7_CheckedChanged(object sender, EventArgs e)
         {
-            gauss.threads = 64;
-            label3.Text = "Wybrana ilosc watkow: " + gauss.threads;
+            GaussAlg.threads = 64;
+            label3.Text = "Wybrana ilosc watkow: " + GaussAlg.threads;
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            int a = MyProc1(1, 2, 3);
+            Console.WriteLine(a);
         }
     }
 }

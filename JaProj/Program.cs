@@ -19,9 +19,5 @@ namespace JaProj
             Application.Run(new Form1());         
         }
     }
-    public static class Gauss_Solver
-    {
-        [DllImport(@"C:\Users\sgork\Desktop\JaProj\x64\Debug\JAAsm.dll", CallingConvention = CallingConvention.Cdecl)]
-        public static extern void gauss_solver(double[,] matrix, int size);
-    }
+    
 }

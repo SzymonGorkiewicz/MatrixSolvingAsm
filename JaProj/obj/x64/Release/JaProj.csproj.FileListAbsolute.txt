@@ -1,0 +1,13 @@
+C:\Users\sgork\Desktop\JaProj\JaProj\bin\x64\Release\JaProj.exe.config
+C:\Users\sgork\Desktop\JaProj\JaProj\bin\x64\Release\JaProj.exe
+C:\Users\sgork\Desktop\JaProj\JaProj\bin\x64\Release\JaProj.pdb
+C:\Users\sgork\Desktop\JaProj\JaProj\bin\x64\Release\Gauss.dll
+C:\Users\sgork\Desktop\JaProj\JaProj\bin\x64\Release\Gauss.pdb
+C:\Users\sgork\Desktop\JaProj\JaProj\obj\x64\Release\JaProj.csproj.AssemblyReference.cache
+C:\Users\sgork\Desktop\JaProj\JaProj\obj\x64\Release\JaProj.csproj.SuggestedBindingRedirects.cache
+C:\Users\sgork\Desktop\JaProj\JaProj\obj\x64\Release\JaProj.Form1.resources
+C:\Users\sgork\Desktop\JaProj\JaProj\obj\x64\Release\JaProj.csproj.GenerateResource.cache
+C:\Users\sgork\Desktop\JaProj\JaProj\obj\x64\Release\JaProj.csproj.CoreCompileInputs.cache
+C:\Users\sgork\Desktop\JaProj\JaProj\obj\x64\Release\JaProj.csproj.CopyComplete
+C:\Users\sgork\Desktop\JaProj\JaProj\obj\x64\Release\JaProj.exe
+C:\Users\sgork\Desktop\JaProj\JaProj\obj\x64\Release\JaProj.pdb
