@@ -111,9 +111,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Gauss\GaussAlgorithm.csproj">
+    <ProjectReference Include="..\Gauss\Gauss.csproj">
       <Project>{72625974-39b8-4b90-b2f7-627aef81d864}</Project>
-      <Name>GaussAlgorithm</Name>
+      <Name>Gauss</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

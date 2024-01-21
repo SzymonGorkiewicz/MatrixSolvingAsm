@@ -1,0 +1,6 @@
+C:\Users\sgork\Desktop\JaProj\Gauss\bin\Debug\Gauss.dll
+C:\Users\sgork\Desktop\JaProj\Gauss\bin\Debug\Gauss.pdb
+C:\Users\sgork\Desktop\JaProj\Gauss\obj\Debug\Gauss.csproj.AssemblyReference.cache
+C:\Users\sgork\Desktop\JaProj\Gauss\obj\Debug\Gauss.csproj.CoreCompileInputs.cache
+C:\Users\sgork\Desktop\JaProj\Gauss\obj\Debug\Gauss.dll
+C:\Users\sgork\Desktop\JaProj\Gauss\obj\Debug\Gauss.pdb

@@ -50,7 +50,7 @@ namespace GaussAlgorithm
                     double factor = matrix[i, i];
                     if (factor == 0)
                     {
-                        throw new InvalidOperationException("Dzielenie przez zero. Dodaj obsługę tej sytuacji.");
+                        throw new InvalidOperationException("Dzielenie przez zero.");
                     }
 
                     for (int k = i; k < n + 1; k++)

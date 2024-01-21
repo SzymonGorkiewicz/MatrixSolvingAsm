@@ -17,9 +17,7 @@ namespace JaProj
     public partial class Form1 : Form
     {
 
-        [DllImport(@"C:\Users\sgork\Desktop\JaProj\x64\Debug\JAAsm.dll", CallingConvention = CallingConvention.Cdecl)]
-       
-        public static extern int MyProc1(int a, int b, int c);
+        
 
         private GaussElimination gauss= new GaussElimination();
         GaussAlgorithm.Class1 GaussAlg = new GaussAlgorithm.Class1();
@@ -97,9 +95,8 @@ namespace JaProj
                     solutionsList = GaussAlg.SolveSystems(matrices);
                 }
                 stopwatch.Stop();
-                long elapsedTicks = stopwatch.ElapsedTicks;
-                double nanoseconds = (double)elapsedTicks / Stopwatch.Frequency * 1e6;
-                Console.WriteLine($"Czas wykonania: {(nanoseconds)/5} mikroseconds");
+                TimeSpan timeElapsed = stopwatch.Elapsed;
+                Console.WriteLine($"Czas wykonania dla C#: {(timeElapsed.TotalMilliseconds) / 5} ms");
 
                 // Ścieżka do pliku wynikowego
                 string outputPath = "C://Users//sgork//Desktop//JaProj//JaProj//output_data//wyniki.txt";
@@ -190,8 +187,8 @@ namespace JaProj
 
         private void button3_Click_1(object sender, EventArgs e)
         {
-            int a = MyProc1(1, 2, 3);
-            Console.WriteLine(a);
+            Assembler.SolveSystems(matrices);
+            
         }
     }
 }
