@@ -4,7 +4,9 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
@@ -29,16 +31,18 @@ namespace JaProj
         [DllImport(@"C:\Users\sgork\Desktop\JaProj\x64\Debug\JAAsm.dll", CallingConvention = CallingConvention.Cdecl)]
 
         public static extern void MyProc1(double[] matrices, int rows, int cols, int length, double[] solutions);
-        
-        public static void SolveSystems(List<double[,]> matrices)
+        public  int threads = Environment.ProcessorCount;
+        public  void SolveSystems(List<double[,]> matrices)
         {
+            
             List<double[]> solutionsListASM = new List<double[]>();
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
+            var options = new ParallelOptions { MaxDegreeOfParallelism = threads };
             for (int d = 0; d < 5; d++)
             {
                 solutionsListASM.Clear();
-                foreach (var matrix in matrices)
+                Parallel.ForEach(matrices, options, matrix =>
                 {
 
                     double[] flattenedMatrix = FlattenMatrix(matrix);
@@ -52,7 +56,7 @@ namespace JaProj
 
                     solutionsListASM.Add(solutions);
 
-                }
+                });
             }
             stopwatch.Stop();
             TimeSpan timeElapsed = stopwatch.Elapsed;

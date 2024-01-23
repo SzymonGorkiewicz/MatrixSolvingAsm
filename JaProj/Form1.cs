@@ -21,6 +21,7 @@ namespace JaProj
 
         private GaussElimination gauss= new GaussElimination();
         GaussAlgorithm.Class1 GaussAlg = new GaussAlgorithm.Class1();
+        JaProj.Assembler asm = new JaProj.Assembler();
         public List<double[,]> matrices;
         private List<double[]> solutionsList;
         public Form1()
@@ -135,6 +136,7 @@ namespace JaProj
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
             GaussAlg.threads = 1;
+            asm.threads = 1;
             label3.Text = "Wybrana ilosc watkow: " + GaussAlg.threads;
         }
 
@@ -152,42 +154,48 @@ namespace JaProj
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
             GaussAlg.threads = 2;
+            asm.threads = 2;
             label3.Text = "Wybrana ilosc watkow: " + GaussAlg.threads;
         }
 
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
             GaussAlg.threads = 4;
+            asm.threads = 4;
             label3.Text = "Wybrana ilosc watkow: " + GaussAlg.threads;
         }
 
         private void radioButton4_CheckedChanged(object sender, EventArgs e)
         {
             GaussAlg.threads = 8;
+            asm.threads = 8;
             label3.Text = "Wybrana ilosc watkow: " + GaussAlg.threads;
         }
 
         private void radioButton5_CheckedChanged(object sender, EventArgs e)
         {
             GaussAlg.threads = 16;
+            asm.threads = 16;
             label3.Text = "Wybrana ilosc watkow: " + GaussAlg.threads;
         }
 
         private void radioButton6_CheckedChanged(object sender, EventArgs e)
         {
             GaussAlg.threads = 32;
+            asm.threads = 32;
             label3.Text = "Wybrana ilosc watkow: " + GaussAlg.threads;
         }
 
         private void radioButton7_CheckedChanged(object sender, EventArgs e)
         {
             GaussAlg.threads = 64;
+            asm.threads = 64;
             label3.Text = "Wybrana ilosc watkow: " + GaussAlg.threads;
         }
 
         private void button3_Click_1(object sender, EventArgs e)
         {
-            Assembler.SolveSystems(matrices);
+            asm.SolveSystems(matrices);
             
         }
     }
