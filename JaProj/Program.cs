@@ -32,7 +32,13 @@ namespace JaProj
 
         public static extern void MyProc1(double[] matrices, int rows, int cols, int length, double[] solutions);
         public  int threads = Environment.ProcessorCount;
-        public  void SolveSystems(List<double[,]> matrices)
+        private readonly Action<string> _updateLabelCallback;
+
+        public Assembler(Action<string> updateLabelCallback)
+        {
+            _updateLabelCallback = updateLabelCallback;
+        }
+        public void SolveSystems(List<double[,]> matrices)
         {
             
             List<double[]> solutionsListASM = new List<double[]>();
@@ -60,8 +66,8 @@ namespace JaProj
             }
             stopwatch.Stop();
             TimeSpan timeElapsed = stopwatch.Elapsed;
-            Console.WriteLine($"Czas wykonania dla assemblera: {(timeElapsed.TotalMilliseconds) / 5} ms");
-
+            //Console.WriteLine($"Czas wykonania dla assemblera: {(timeElapsed.TotalMilliseconds) / 5} ms");
+            _updateLabelCallback?.Invoke($"Czas wykonania dla ASM: {(timeElapsed.TotalMilliseconds) / 5} ms");
             string outputPath = "C://Users//sgork//Desktop//JaProj//JaProj//output_data//wynikiASM.txt";
             using (StreamWriter writer = new StreamWriter(outputPath))
             {
